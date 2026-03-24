@@ -1,0 +1,9 @@
+/* --- style.scss --- */
+// フォルダを指定するだけで、自動的に foundation/_index.scss が展開されます。
+@use "foundation";
+
+// ↓ Foundation以降のレイヤーを順次読み込む
+@use "layout";
+@use "object/component";
+@use "object/project";
+@use "object/utility";

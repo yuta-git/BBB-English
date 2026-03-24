@@ -1,0 +1,10 @@
+/* --- foundation/_index.scss --- */
+
+// 1. 設定・機能（CSSとしては出力されないもの）を先に読み込む
+@forward "variables";
+@forward "functions";
+@forward "mixin";
+
+// 2. 上記の設定を利用して、実際のCSSを出力するものを後に読み込む
+@forward "reset";
+@forward "base";

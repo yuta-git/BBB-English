@@ -1,0 +1,115 @@
+@use "../../foundation/" as *;
+
+.p-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(14);
+  width: rem(100);
+  height: rem(100);
+  background-color: $color-accent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  @include hover {
+    opacity: 0.8;
+  }
+}
+
+.p-hamburger__line {
+  display: block;
+  width: rem(50);
+  height: rem(2);
+  background-color: $color-white;
+}
+
+// ナビゲーションオーバーレイ
+.p-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: $color-accent;
+  padding: rem(25);
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: transform 0.35s ease, visibility 0.35s ease;
+}
+
+.p-nav.is-open {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.p-nav__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.p-nav__logo {
+  display: block;
+  width: rem(100);
+}
+
+.p-nav__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.p-nav__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(25);
+  height: rem(25);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.p-nav__close img {
+  width: 100%;
+  height: auto;
+}
+
+.p-nav__list {
+  margin-top: rem(29);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(38);
+  text-align: center;
+}
+
+.p-nav__link {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: rem(16);
+  letter-spacing: 0.1em;
+  color: $color-white;
+
+  @include hover {
+    opacity: 0.7;
+  }
+}
+
+.p-nav__btn {
+  display: block;
+  width: rem(250);
+  margin: rem(40) auto 0;
+  padding: rem(15) 0;
+  border: 1px solid $color-white;
+  color: $color-white;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: rem(16);
+  letter-spacing: 0.1em;
+  text-align: center;
+
+  @include hover {
+    background-color: rgba($color-white, 0.1);
+  }
+}

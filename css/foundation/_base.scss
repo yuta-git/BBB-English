@@ -1,0 +1,26 @@
+@use "./variables" as *;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  // 英語フォントを先に指定し、日本語には日本語フォントが当たるようにする
+  font-family: $font-en, $font-ja;
+  
+  color: $color-text-main;
+  background-color: $color-bg-base;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+iframe {
+  vertical-align: bottom;
+}
