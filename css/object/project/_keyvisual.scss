@@ -32,9 +32,6 @@
   }
 }
 
-// 上下左右の全辺を白くフェードさせるオーバーレイ
-// top: rem(100) → 固定ヘッダー(100px)の下から開始することで、上のフェードを見えるようにする
-// box-shadow: inset で4辺まとめてフェード
 .p-keyvisual__bg::after {
   content: "";
   position: absolute;
@@ -98,7 +95,7 @@
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0.1em;
-  color: #333333;
+  color: $color-text-main;
   text-shadow: 0 rem(4) rem(6) rgba(255, 255, 255, 1);
   margin-bottom: rem(30);
 
