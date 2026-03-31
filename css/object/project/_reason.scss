@@ -1,8 +1,5 @@
 @use "../../foundation" as *;
 
-.p-reason {
-}
-
 .p-reason__head {
   padding: rem(60) rem(20) rem(48);
   text-align: center;
@@ -65,9 +62,6 @@
   opacity: 0;
   transform: translateX(rem(-60));
   transition: opacity 0.8s ease, transform 0.8s ease;
-
-  @include mq(sp) {
-  }
 }
 
 .p-reason__item--right {
@@ -76,9 +70,6 @@
   opacity: 0;
   transform: translateX(rem(60));
   transition: opacity 0.8s ease, transform 0.8s ease;
-
-  @include mq(sp) {
-  }
 }
 
 .p-reason__item--left.is-animated,
