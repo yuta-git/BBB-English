@@ -1,0 +1,210 @@
+@use "../../foundation" as *;
+
+.p-voice {
+  padding: rem(60) rem(20) rem(80);
+
+  @include mq(sp) {
+    padding: rem(40) rem(20) rem(60);
+  }
+}
+
+.p-voice__inner {
+  max-width: rem(860);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-voice__head {
+  text-align: center;
+  margin-bottom: rem(56);
+
+  @include mq(sp) {
+    margin-bottom: rem(40);
+  }
+}
+
+.p-voice__title {
+  display: inline-block;
+  font-size: rem(28);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  &::after {
+    content: "";
+    display: block;
+    width: rem(40);
+    height: rem(2);
+    background-color: $color-text-main;
+    margin: rem(14) auto 0;
+  }
+
+  @include mq(sp) {
+    font-size: rem(22);
+  }
+}
+
+.p-voice__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: rem(48);
+
+  @include mq(sp) {
+    gap: rem(36);
+  }
+}
+
+.p-voice__item {
+  display: flex;
+  align-items: center;
+  gap: rem(32);
+
+  @include mq(sp) {
+    flex-direction: column;
+    gap: rem(16);
+  }
+}
+
+.p-voice__item--left {
+  flex-direction: row;
+
+  @include mq(sp) {
+    flex-direction: column;
+  }
+}
+
+.p-voice__item--right {
+  flex-direction: row-reverse;
+
+  @include mq(sp) {
+    flex-direction: column;
+  }
+}
+
+.p-voice__person {
+  flex-shrink: 0;
+  text-align: center;
+  width: rem(90);
+
+  @include mq(sp) {
+    width: rem(64);
+  }
+}
+
+.p-voice__avatar {
+  width: rem(90);
+  height: rem(90);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #c8ccd4;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @include mq(sp) {
+    width: rem(64);
+    height: rem(64);
+  }
+}
+
+.p-voice__name {
+  font-size: rem(11);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-top: rem(8);
+}
+
+.p-voice__job {
+  font-size: rem(11);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.p-voice__bubble {
+  position: relative;
+  background-color: #E8EEF5;
+  border-radius: rem(12);
+  padding: rem(20) rem(24);
+  width: min(100%, rem(600));
+  flex: 0 1 rem(600);
+
+  @include mq(sp) {
+    order: -1;
+    width: 100%;
+    flex: 1 1 auto;
+    padding: rem(16) rem(18);
+  }
+}
+
+.p-voice__bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border-top: rem(10) solid transparent;
+  border-bottom: rem(10) solid transparent;
+}
+
+.p-voice__item--left .p-voice__bubble::before {
+  left: rem(-14);
+  transform: translateY(-50%);
+  border-right: rem(14) solid #E8EEF5;
+}
+
+.p-voice__item--right .p-voice__bubble::before {
+  right: rem(-14);
+  transform: translateY(-50%);
+  border-left: rem(14) solid #E8EEF5;
+}
+
+// 吹き出しの矢印はスマホでは下向きにする
+@include mq(sp) {
+  .p-voice__item--left .p-voice__bubble::before,
+  .p-voice__item--right .p-voice__bubble::before {
+    top: auto;
+    right: auto;
+    bottom: rem(-14);
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: rem(14) solid #E8EEF5;
+    border-right: rem(10) solid transparent;
+    border-bottom: 0;
+    border-left: rem(10) solid transparent;
+  }
+}
+
+.p-voice__text {
+  font-size: rem(14);
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+
+  @include mq(sp) {
+    font-size: rem(13);
+  }
+}
+
+// ----------------------------------------
+// アニメーション
+// ----------------------------------------
+
+.p-voice__item {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.p-voice__item.is-animated {
+  animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
