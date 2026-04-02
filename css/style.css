@@ -694,26 +694,24 @@ iframe {
   }
 }
 
-.p-voice__item--left .p-voice__bubble::before {
+.p-voice__bubble::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: -0.875rem;
-  transform: translateY(-50%);
   border-top: 0.625rem solid transparent;
-  border-right: 0.875rem solid #E8EEF5;
   border-bottom: 0.625rem solid transparent;
 }
 
+.p-voice__item--left .p-voice__bubble::before {
+  left: -0.875rem;
+  transform: translateY(-50%);
+  border-right: 0.875rem solid #E8EEF5;
+}
+
 .p-voice__item--right .p-voice__bubble::before {
-  content: "";
-  position: absolute;
-  top: 50%;
   right: -0.875rem;
   transform: translateY(-50%);
-  border-top: 0.625rem solid transparent;
   border-left: 0.875rem solid #E8EEF5;
-  border-bottom: 0.625rem solid transparent;
 }
 
 @media screen and (max-width: 767px) {

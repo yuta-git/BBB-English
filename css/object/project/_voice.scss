@@ -139,30 +139,24 @@
   }
 }
 
-.p-voice__item--left .p-voice__bubble {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: rem(-14);
-    transform: translateY(-50%);
-    border-top: rem(10) solid transparent;
-    border-right: rem(14) solid #E8EEF5;
-    border-bottom: rem(10) solid transparent;
-  }
+.p-voice__bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border-top: rem(10) solid transparent;
+  border-bottom: rem(10) solid transparent;
 }
 
-.p-voice__item--right .p-voice__bubble {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: rem(-14);
-    transform: translateY(-50%);
-    border-top: rem(10) solid transparent;
-    border-left: rem(14) solid #E8EEF5;
-    border-bottom: rem(10) solid transparent;
-  }
+.p-voice__item--left .p-voice__bubble::before {
+  left: rem(-14);
+  transform: translateY(-50%);
+  border-right: rem(14) solid #E8EEF5;
+}
+
+.p-voice__item--right .p-voice__bubble::before {
+  right: rem(-14);
+  transform: translateY(-50%);
+  border-left: rem(14) solid #E8EEF5;
 }
 
 // 吹き出しの矢印はスマホでは下向きにする
