@@ -14,35 +14,6 @@
   margin-right: auto;
 }
 
-.p-voice__head {
-  text-align: center;
-  margin-bottom: rem(56);
-
-  @include mq(sp) {
-    margin-bottom: rem(40);
-  }
-}
-
-.p-voice__title {
-  display: inline-block;
-  font-size: rem(28);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-
-  &::after {
-    content: "";
-    display: block;
-    width: rem(40);
-    height: rem(2);
-    background-color: $color-text-main;
-    margin: rem(14) auto 0;
-  }
-
-  @include mq(sp) {
-    font-size: rem(22);
-  }
-}
-
 .p-voice__list {
   list-style: none;
   display: flex;

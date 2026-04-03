@@ -1,0 +1,81 @@
+@use "../../foundation" as *;
+
+.p-overview {
+  background-image: url("../../../img/bg.gif");
+  background-size: rem(800);
+  background-repeat: repeat;
+  animation: p-overview-bg-slide 10s linear infinite;
+  padding: rem(60) rem(20) rem(80);
+
+  @include mq(sp) {
+    padding: rem(40) rem(20) rem(60);
+  }
+}
+
+@keyframes p-overview-bg-slide {
+  0% {
+    background-position: rem(800) 0;
+  }
+
+  100% {
+    background-position: 0 rem(800);
+  }
+}
+
+.p-overview__inner {
+  max-width: rem(860);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-overview__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(24);
+
+  @include mq(sp) {
+    grid-template-columns: 1fr;
+    gap: rem(16);
+  }
+}
+
+.p-overview__item {
+  background-color: $color-white;
+  border-radius: rem(16);
+  padding: rem(60);
+
+
+  @include mq(sp) {
+    padding: rem(30);
+  }
+}
+
+.p-overview__item-title {
+  font-size: rem(28);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: rem(6);
+  text-align: center;
+
+  @include mq(sp) {
+    font-size: rem(24);
+  }
+}
+
+.p-overview__item-en {
+  font-size: rem(18);
+  letter-spacing: 0.15em;
+  text-align: center;
+  font-weight: 700;
+
+  @include mq(sp) {
+    font-size: rem(16);
+  }
+}
+
+.p-overview__item-desc {
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin-top: rem(16);
+}

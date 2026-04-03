@@ -40,10 +40,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: rem(100);
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     pointer-events: none;
     box-shadow: inset 0 0 rem(20) rem(20) $color-white;
   }
@@ -90,12 +87,10 @@
   top: 50%;
   left: 9.71%;
   transform: translateY(-50%);
-  width: 33.14%;
 
   @include mq(sp) {
     left: rem(20);
     right: rem(20);
-    width: auto;
   }
 }
 
