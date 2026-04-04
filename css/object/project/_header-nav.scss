@@ -1,6 +1,10 @@
 @use "../../foundation/" as *;
 
 .p-hamburger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +17,12 @@
   cursor: pointer;
   flex-shrink: 0;
 
+  @include mq(sp) {
+    width: rem(75);
+    height: rem(75);
+    gap: rem(10);
+  }
+
   @include hover {
     opacity: 0.8;
   }
@@ -23,6 +33,10 @@
   width: rem(50);
   height: rem(2);
   background-color: $color-white;
+
+  @include mq(sp) {
+    width: rem(35);
+  }
 }
 
 // ナビゲーションオーバーレイ
@@ -97,6 +111,7 @@
 }
 
 .p-nav__btn {
+  position: relative;
   display: block;
   width: rem(250);
   margin: rem(40) auto 0;
@@ -111,5 +126,17 @@
 
   @include hover {
     background-color: rgba($color-white, 0.1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    top: rem(8);
+    right: rem(-6);
+    bottom: rem(-6);
+    left: 2%;
+    border-right: 1px solid $color-white;
+    border-bottom: 1px solid $color-white;
   }
 }
