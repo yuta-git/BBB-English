@@ -1,7 +1,7 @@
 $(function () {
   const $hamburger = $("#js-hamburger");
   const $nav = $("#js-nav");
-  const $navMenu = $nav.find(".p-nav__menu");
+  const $navMenu = $nav.find(".js-nav-menu");
   const $navClose = $("#js-nav-close");
 
   function openNav() {
