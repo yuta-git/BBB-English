@@ -1,0 +1,76 @@
+@use "../../foundation" as *;
+
+.p-cta {
+  background-color: $color-bg-base;
+  padding: rem(80) rem(20);
+
+  @include mq(sp) {
+    padding: rem(60) rem(20);
+  }
+}
+
+.p-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: rem(860);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.p-cta__title {
+  margin: 0;
+  font-size: rem(32);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+
+  @include mq(sp) {
+    font-size: rem(22);
+  }
+}
+
+.p-cta__lead {
+  margin: rem(16) 0 0;
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+
+  @include mq(sp) {
+    font-size: rem(14);
+  }
+}
+
+.p-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: rem(40);
+  width: min(100%, rem(680));
+  padding: rem(28) rem(80);
+  border-radius: rem(9999);
+  border: rem(2) solid $color-accent;
+  background-color: $color-accent;
+  color: $color-white;
+  font-size: rem(18);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+
+  @include hover {
+    background-color: $color-white;
+    color: $color-accent;
+  }
+
+  @include mq(sp) {
+    margin-top: rem(32);
+    width: 100%;
+    padding: rem(22) rem(40);
+    font-size: rem(16);
+  }
+}

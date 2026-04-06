@@ -1,17 +1,22 @@
 $(function () {
   const $hamburger = $("#js-hamburger");
   const $nav = $("#js-nav");
+  const $navMenu = $nav.find(".js-nav-menu");
   const $navClose = $("#js-nav-close");
 
   function openNav() {
     $hamburger.attr("aria-expanded", "true");
-    $nav.addClass("is-open").attr("aria-hidden", "false");
+    $nav.addClass("is-open");
+    $navMenu.attr("aria-hidden", "false");
+    $nav.find(".js-nav-btn").attr("aria-hidden", "false");
     $("body").css("overflow", "hidden");
   }
 
   function closeNav() {
     $hamburger.attr("aria-expanded", "false");
-    $nav.removeClass("is-open").attr("aria-hidden", "true");
+    $nav.removeClass("is-open");
+    $navMenu.attr("aria-hidden", "true");
+    $nav.find(".js-nav-btn").attr("aria-hidden", "true");
     $("body").css("overflow", "");
   }
 

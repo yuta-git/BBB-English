@@ -1,1 +1,78 @@
 @use "../foundation/" as *;
+
+.l-footer {
+  background-color: $color-bg-gray-light;
+  padding: rem(60) rem(40) rem(40);
+
+  @include mq(sp) {
+    padding: rem(40) rem(20) rem(32);
+  }
+}
+
+.l-footer__inner {
+  max-width: rem(1100);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: rem(64);
+  row-gap: rem(48);
+
+  @include mq(sp) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: rem(24);
+    row-gap: rem(40);
+  }
+}
+
+.l-footer__col {
+  min-width: 0;
+}
+
+.l-footer__title {
+  margin: 0 0 rem(16);
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.l-footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  list-style: none;
+}
+
+.l-footer__item {
+  margin: 0;
+}
+
+.l-footer__link {
+  display: inline-block;
+  font-size: rem(14);
+  line-height: 1.6;
+  color: $color-text-main;
+
+  @include hover {
+    opacity: 0.7;
+  }
+}
+
+.l-footer__copy {
+  margin: rem(48) 0 0;
+  text-align: center;
+
+  @include mq(sp) {
+    margin-top: rem(40);
+  }
+}
+
+.l-footer__copy-text {
+  font-size: rem(12);
+  line-height: 1.5;
+  color: $color-text-main;
+}
